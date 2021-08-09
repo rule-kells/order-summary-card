@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root {
+	/* ### Colors ### */
+
+	/* ## Primary ## */
+
+	--pale-blue: hsl(225, 100%, 94%);
+	--bright-blue: hsl(245, 75%, 52%);
+
+	/* ## Neutral ## */
+
+	--very-pale-blue: hsl(225, 100%, 98%);
+	--desaturated-blue: hsl(224, 23%, 55%);
+	--dark-blue: hsl(223, 47%, 23%);
+
+	/* ### Typography ###  */
+
+	/* ## Body Copy ##  */
+
+	/* ## paragraph ##  */
+	--fs-body: 1rem;
+
+	/* ## font family ##  */
+	--ff-primary: 'Red Hat Display', sans-serif;
+}
+
+/* general style and structure  */
+
+html {
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-size: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	position: relative;
+	background-color: var(--pale-blue);
+	color: var(--desaturated-blue);
+	text-align: center;
+	min-height: 100vh;
+	font-family: var(--ff-primary);
+	font-size: var(--fs-body);
+	line-height: 1.63em;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+body::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-image: url('../images/pattern-background-mobile.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: top center;
+	z-index: -1;
+}
+
+h1,
+h2 {
+	color: var(--dark-blue);
+	font-weight: 900;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.container {
+	width: 90%;
+	max-width: 28.13rem;
+	margin: 0 auto;
+}
+
+/* card section  */
+
+.card {
+	background-color: #fff;
+	border-radius: 1.25rem;
+	overflow: hidden;
+	box-shadow: 0 40px 40px -20px hsla(228, 87%, 39%, 0.15);
+}
+
+/* title section  */
+
+.title-content {
+	padding: 2em 2em 1.5em;
+}
+
+.title-content h1 {
+	margin-bottom: 1rem;
+}
+
+/* plan section  */
+
+.plan {
+	display: flex;
+	justify-content: center;
+	background-color: var(--very-pale-blue);
+	width: 90%;
+	border-radius: 0.69rem;
+	padding: 1em;
+	font-size: 0.88rem;
+	line-height: 1.13rem;
+	align-items: center;
+	text-align: left;
+
+	margin: 0 auto 1.5em;
+}
+
+.plan-content {
+	margin: 0 3.13em 0 1.25em;
+}
+
+.plan h2 {
+	font-size: 0.88rem;
+}
+
+.plan p {
+	font-weight: 500;
+	margin-top: 0.19rem;
+}
+
+.change {
+	font-weight: 700;
+	font-size: 0.81rem;
+	color: var(--bright-blue);
+}
+
+/* cta section  */
+
+button,
+input[type="submit"],
+input[type="reset"] {
+	display: block;
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+
+	margin: 0 auto;
+}
+
+.payment-btn a,
+.cancel-btn a {
+	text-decoration: none;
+}
+
+.payment-btn {
+	width: 90%;
+	background-color: var(--bright-blue);
+	border-radius: 0.69rem;
+	padding: 0.80rem 0;
+	box-shadow: 0 20px 20px hsla(245, 75%, 52%, 0.19);
+}
+
+.payment-btn a {
+	font-size: 0.94rem;
+	line-height: 1.25rem;
+}
+
+.payment-btn a {
+	color: #fff;
+}
+
+.cancel-btn {
+	font-size: 0.94rem;
+	line-height: 1.25rem;
+	margin: 1.5em auto 2em;
+}
+
+.cancel-btn a {
+	color: var(--desaturated-blue);
+}
+
+/* footer section  */
+.attribution {
+	position: absolute;
+	bottom: 0;
+	font-size: 11px;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+/* desktop version  */
+
+@media screen and (min-width: 30em) {
+	/* general section  */
+
+	body {
+		height: 100vh;
+	}
+
+	body::before {
+		background-size: contain;
+		background-image: url('../images/pattern-background-desktop.svg');
+	}
+
+	/* card section  */
+
+	.title-content {
+		padding: 2.81em 3em 1.25em;
+	}
+
+	.title-content h1 {
+		font-size: 1.75rem;
+		line-height: 2.31rem;
+		margin-bottom: 1.06rem;
+	}
+
+	/* plan section  */
+
+	.plan {
+		padding: 1.56rem;
+		margin: 0 auto 2em;
+		width: 80%;
+	}
+
+	.plan-content h2 {
+		font-size: 1rem;
+		line-height: 1.31rem;
+	}
+
+	.change {
+		transition: all .5s ease-in;
+	}
+
+	.change:hover {
+		color: hsl(245, 83%, 68%);
+		text-decoration: none;
+	}
+
+	/* cta section  */
+
+	.payment-btn {
+		padding: 0.94rem 0;
+		width: 80%;
+		transition: all .5s ease-in;
+	}
+
+	.payment-btn:hover {
+		background-color: hsl(245, 83%, 68%);
+	}
+
+	.cancel-btn {
+		margin: 2em auto 3em;
+	}
+
+	.cancel-btn a {
+		transition: all .5s ease-in;
+	}
+
+	.cancel-btn a:hover {
+		color: var(--dark-blue);
+	}
+}
